@@ -1,24 +1,7 @@
-# README
+# APPLICATION 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello. My name is Mohamad Nasrullah. A beginner coder - true to its core definition. 
 
-Things you may want to cover:
+This is my first Git repositories. Many more to come, of course.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Follow my SNS @nasrauhl
