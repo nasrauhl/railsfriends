@@ -1,0 +1,73 @@
+<% if @preference.preference_entries.empty? %>
+
+
+ <div class="panel-header">
+        <div class="header text-center">
+          <h2 class="title">Results Not Found</h2>
+          <br/>
+        </div>
+      </div>
+<div class="content">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-header">
+              </div>
+              <div class="card-body">
+                <div class="actions d-grid gap-2 col-4 mx-auto">
+                <%= link_to 'Update Preference Form', new_preference_path, class: "btn btn-default" %>
+                </div>
+                <br/>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<% else %>
+
+ <div class="panel-header">
+        <div class="header text-center">
+          <h2 class="title">Results</h2>
+          <br/>
+        </div>
+      </div>
+<div class="content">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="card">
+              <h2 class="card-header text-center text-white bg-dark mb-3">Suggestions</h2>
+              <p class="category text-center">These are the results that match your criteria chosen best.</p>
+              <div class="card-body">
+<table class="table table-sm">
+  <thead class="table">
+    <tr>
+      <th>Residence Type</th>
+      <th>Residence Location</th>
+      <th>Rent Price</th>
+      <th>University</th>
+      <th>Details</th>
+
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	<% @preference.preference_entries.each do |c| %> 
+      <tr>
+        <td><%= c.room_type %></td>
+        <td><%= c.location %></td>
+        <td><%= c.rent %></td>
+        <td><%= c.uni_name %></td>
+        <td><%= link_to 'Select', c, class: "btn btn-outline-success btn-rounded btn-sm"%></td>
+	  </tr>
+      <% end %>
+  </tbody>
+</table>
+<div class="actions d-grid gap-2 col-4 mx-auto">
+<%= link_to 'Back To Form', new_preference_path, class: "btn btn-outline-primary" %>
+</div>
+<br/>
+</div>
+</div>
+<% end %>

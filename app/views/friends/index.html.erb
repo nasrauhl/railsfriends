@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 
-<h1>Friends</h1>
+<h1>Users</h1>
 </br>
 
 <table class="table table-dark table-striped table-hover">
@@ -10,7 +10,6 @@
       <th>Email</th>
       <th>Phone</th>
       <th>SNS</th>
-      <th>User ID</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -23,7 +22,6 @@
         <td><%= friend.email %></td>
         <td><%= friend.phone %></td>
         <td><%= friend.sns %></td>
-        <td><%= friend.user_id %></td>
         <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger btn-sm'%></td>
       </tr>
       <% end %>
@@ -37,8 +35,6 @@
 
 <% else %>
 
-<h1>This is only the beginning</h1>
-
-Let's get started
+<%= render 'home/main' %>
 
 <% end %>

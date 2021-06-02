@@ -1,0 +1,59 @@
+<div class="panel-header panel-header-sm">
+    <div class="header text-center">
+          <h1 class="title"><%= @entry.building%></h1>
+        </div>
+      </div>
+      <div class="content">
+        <div class="row justify-content-center ">
+          <div class="col-md-12">            
+            <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center no-gutters">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-password-image">
+                            <% if @entry.photo.attached? %>   
+                             <image src="<%=(url_for(@entry.photo))%>" style='height: 100%; width: 100%';>
+                               <% end %>
+                                </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class = "text-center">
+                                        <p><h6 class="text-gray-900 mb-2"><%= @entry.location %></h6></p>                       
+                                        <p class="mb-4"><%= @entry.room_type %> | <%= @entry.rent %> | <%= @entry.uni_name %>
+                                        </p>
+                                        <p><span class="badge bg-dark"><%= @entry.get_upvotes.size %> Likes</span></p>
+                                    
+                                    <div class="btn-group mb-3">
+                                    <button type="button" class="btn btn-warning active btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><title>like-2</title><g fill="#111111"><path fill="#111111" d="M13.3,6H9V2c0-1.5-0.8-2-2-2C6.7,0,6.4,0.2,6.4,0.5C6.4,0.5,4.1,8,4,8v8h8.6c1.3,0,2.4-1,2.6-2.3L16,9.1 c0.1-0.8-0.1-1.6-0.6-2.1C14.9,6.3,14.1,6,13.3,6z"></path> <rect y="8" width="2" height="8"></rect></g></svg> <%= link_to "Like", like_entry_path(@entry), method: :get, class:"link-dark text-decoration-none" %></button>
+
+                                    <button type="button" class="btn btn-warning btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><title>ic_thumb_down_24px</title>
+                                    <g fill="#020202">
+                                    <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"></path>
+                                    </g>
+                                    </svg> <%= link_to "Dislike", dislike_entry_path(@entry), method: :get, class:"link-dark text-decoration-none" %></button>
+                                    </div>
+                                    <hr>  
+                                    <%= link_to favorite_text, favorites_update_path(entry: @entry), id:'favorite_link', remote: true, class: "btn btn-info btn-round btn-sm" %>
+                                    <p><%= link_to @entry.link, :target => '_blank', class: "btn btn-primary"%></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</div>
+</div>
+</div>
+
+
+   

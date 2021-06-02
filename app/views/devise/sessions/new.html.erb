@@ -1,6 +1,13 @@
-<div class="card">
-  <h2 class="card-header">Log In</h2>
-  <div class="card-body">
+<div class="panel-header panel-header-sm">
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Log In</h4>
+              </div>
+              <div class="card-body">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field form-group">
     <% f.label :email %><br />
@@ -13,16 +20,20 @@
   </div>
   <br/>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field form-check">
-      <%= f.check_box :remember_me, class: "form-check-input" %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-  <br/>
+<% if devise_mapping.rememberable? %>
+<div class="field form-check">
+    <label class="form-check-label">
+        <%= f.check_box :remember_me, class: "form-check-input" %>
+        Remember Me
+        <span class="form-check-sign">
+            <span class="check"></span>
+        </span>
+    </label>
+</div>
+<% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in", class:"btn btn-outline-dark"%>
+  <div class="actions d-grid gap-2 col-2 mx-auto">
+    <%= f.submit "Log In", class:"btn btn-primary"%>
   </div>
 <% end %>
   </div>
@@ -31,3 +42,8 @@
 <br/>
 
 <%= render "devise/shared/links" %>
+
+</div>
+  </div>
+    </div>
+      </div>

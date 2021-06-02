@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  get 'favorites/update'
   devise_for :users
+  resources :entries do
+  	member do 
+  		get "like", to: "entries#upvote"
+  		get "dislike", to: "entries#downvote"
+  	end
+  end
+
   resources :friends
- #get 'home/index'
- get 'home/about'
- #root 'home#index'
- root 'friends#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :preferences
+ 
+get 'home/about'
+root 'home#about'
+get '/search' => 'entries#search', :as => 'search_entry'
+get "/list" => "entries#list", :as => 'list_entry'
+
 end

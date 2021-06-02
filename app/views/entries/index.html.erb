@@ -1,0 +1,89 @@
+      <% if current_user && current_user.admin %>
+
+      <div class="panel-header">
+        <div class="header text-center">
+          <h2 class="title">Property Listing</h2>
+          <p class="category"><a target="_blank" href="/">Residency RS </a>property administration.</a></p>          
+        </div>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+            <div class="text-center mb-5">              
+            <p> 
+            <%= link_to 'New Entry', new_entry_path, class: "btn btn-primary fw-bold" %>         
+            <%= form_tag entries_path, :method => 'get' do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", class:"btn btn-outline-primary btn-round btn-sm" %><% end %>
+              </p>
+              </div>
+               <div class="card-body">
+              </div>
+              
+
+<table class="table table-sm">
+  <thead class="table text-primary">
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Rent</th>
+      <th>University</th>
+      <th>Details</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.room_type %></td>
+        <td><%= entry.building %></td>
+        <td><%= entry.location %></td>
+        <td><%= entry.rent %></td>
+        <td><%= entry.uni_name %></td>
+        <td><%= link_to 'More', entry, class:'btn btn-success btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry), class:'btn btn-info btn-sm' %></td>
+        <td><%= link_to 'Delete', entry, class:'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+        <td><small class="text-muted">Last updated</small> &ndash; <%= time_ago_in_words(entry.created_at)%> ago </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>   
+</div>
+ </div>
+  </div>
+   </div>
+    </div>
+
+     <% else %>   
+
+      <div class="alert alert-danger">
+      <button type="button" aria-hidden="true" class="close">
+      <i class="now-ui-icons objects_key-25"></i>
+      </button>
+      <span><b> You don't belong here!</b></span>
+      </div>
+
+      <% end %>
+    
+
+      
+
+
+
+
+
+
+
+
+
+  
+
+
+
+

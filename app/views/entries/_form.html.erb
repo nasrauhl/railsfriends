@@ -1,0 +1,55 @@
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+              </div>
+            <div class="card-body">
+<%= form_with(model: entry) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul> 
+    </div>
+    <% end %>
+  
+  <div class="field form-group">
+    <%= form.text_field :uni_name, class:"form-control", placeholder: "University"%>
+  <br/>
+    <%= form.text_field :building, class:"form-control", placeholder: "Residence Name" %>
+  <br/>
+    <%= form.text_field :location, class:"form-control", placeholder: "Residence Location" %>
+  <br/>
+    <%= form.text_field :room_type, class:"form-control", placeholder: "Residence Room Type" %>
+  <br/>
+    <%= form.number_field :rent, class:"form-control", placeholder: "Rent Price" %>
+  <br/>
+    <%= form.text_field :link, class:"form-control", placeholder: "Residence Link" %>
+  <br/>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+  <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+  </svg> &nbsp
+  <%= form.file_field :photo %>
+  <br/>
+  <br/>
+
+<div class="actions d-grid gap-2 col-2 mx-auto">
+<%= form.submit class:"btn btn-primary fw-bold" %><%= link_to 'Back', entries_path, class:"btn btn-outline-primary" %>
+</div>
+</div>
+<% end %>
+</div>
+    </div>
+        </div>
+          </div>
+          </div>
+        
+  

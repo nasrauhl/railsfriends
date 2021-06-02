@@ -1,0 +1,45 @@
+  <div class="panel-header">
+        <div class="header text-center">
+          <h2 class="title">Search Results</h2>
+          <p class="category"><a target="_blank" href="/">Residency RS </a>property lists.</a></p>
+          <p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">            
+               <div class="card-body">
+              
+<table class="table table-sm">
+  <thead class="table">
+    <tr>
+      <th>Residence Type</th>
+      <th>Residence Location</th>
+      <th>Rent Price</th>
+      <th>University</th>
+      <th>Details</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	<% @results.each do |result| %> 
+      <tr>
+        <td><%= result.room_type %></td>
+        <td><%= result.location %></td>
+        <td><%= result.rent %></td>
+        <td><%= result.uni_name %></td>
+        <td><%= link_to 'Visit', result, class:'btn btn-outline-success btn-sm' %></td>
+	  </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+    </div>
+     </div>
+      </div>
+       </div>
+
+    
