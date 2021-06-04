@@ -1,3 +1,5 @@
+<% if current_user && current_user.admin %>
+
 <div class="panel-header">
         <div class="header text-center">
           <h2 class="title">Editing Entry</h2>
@@ -7,3 +9,13 @@
       </div>
 <%= render 'form', entry: @entry %>
 
+ <% else %>   
+
+      <div class="alert alert-danger">
+      <button type="button" aria-hidden="true" class="close">
+      <i class="now-ui-icons objects_key-25"></i>
+      </button>
+      <span><b> You don't belong here!</b></span>
+      </div>
+
+      <% end %>
