@@ -3,7 +3,7 @@
       <div class="panel-header">
         <div class="header text-center">
           <h2 class="title">Property Listing</h2>
-          <p class="category"><a target="_blank" href="/">Residency RS </a>property administration.</a></p>          
+          <p class="category"><a target="_blank" href="/" class="text-decoration-none">Residency RS </a> administration.</a></p>          
         </div>
       </div>
       <div class="content">
@@ -23,15 +23,14 @@
               </div>
               
 
-<table class="table table-sm">
+<table class="table table-sm text-capitalize">
   <thead class="table text-primary">
     <tr>
-      <th>Type</th>
       <th>Name</th>
+      <th>Type</th>
       <th>Location</th>
       <th>Rent</th>
       <th>University</th>
-      <th>Details</th>
       <th>Edit</th>
       <th>Delete</th>
       <th colspan="2"></th>
@@ -41,13 +40,12 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.room_type %></td>
-        <td><%= entry.building %></td>
+        <td><%= link_to entry.building, entry, class:'link-primary text-decoration-none' %></td>
+        <td><%= entry.room_type %></td>        
         <td><%= entry.location %></td>
         <td><%= entry.rent %></td>
         <td><%= entry.uni_name %></td>
-        <td><%= link_to 'More', entry, class:'btn btn-success btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry), class:'btn btn-info btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry), class:'btn btn-success btn-sm' %></td>
         <td><%= link_to 'Delete', entry, class:'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' }%> </td>
         <td><small class="text-muted">Last updated</small> &ndash; <%= time_ago_in_words(entry.created_at)%> ago </td>
       </tr>

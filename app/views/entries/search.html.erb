@@ -10,14 +10,15 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">            
-               <div class="card-body">
+               <div class="card-body text-capitalize">
               
 <table class="table table-sm">
   <thead class="table">
     <tr>
-      <th>Residence Type</th>
-      <th>Residence Location</th>
-      <th>Rent Price</th>
+      <th>Residential Name</th>
+      <th>Residential Type</th>
+      <th>Residential <br>Location</th>
+      <th>Rent <br>Price</th>
       <th>University</th>
       <th>Details</th>
       <th colspan="2"></th>
@@ -27,6 +28,7 @@
   <tbody>
   	<% @results.each do |result| %> 
       <tr>
+        <td><%= result.building %></td>
         <td><%= result.room_type %></td>
         <td><%= result.location %></td>
         <td><%= result.rent %></td>

@@ -3,7 +3,7 @@
 
  <div class="panel-header">
         <div class="header text-center">
-          <h2 class="title">Results Not Found</h2>
+          <h2 class="title">404 <br>UH HUH! Results Not Found</h2>
           <br/>
         </div>
       </div>
@@ -15,7 +15,7 @@
               </div>
               <div class="card-body">
                 <div class="actions d-grid gap-2 col-4 mx-auto">
-                <%= link_to 'Update Preference Form', new_preference_path, class: "btn btn-default" %>
+                <%= link_to 'Update Preference Form', new_preference_path, class: "btn btn-primary" %>
                 </div>
                 <br/>                
               </div>
@@ -38,13 +38,13 @@
             <div class="card">
               <h2 class="card-header text-center text-white bg-dark mb-3">Suggestions</h2>
               <p class="category text-center">These are the results that match your criteria chosen best.</p>
-              <div class="card-body">
+              <div class="card-body text-capitalize">
 <table class="table table-sm">
   <thead class="table">
     <tr>
-      <th>Residence Type</th>
-      <th>Residence Location</th>
-      <th>Rent Price</th>
+      <th>Residential Type</th>
+      <th>Residential <br>Location</th>
+      <th>Rental <br>Price</th>
       <th>University</th>
       <th>Details</th>
 
@@ -65,7 +65,7 @@
   </tbody>
 </table>
 <div class="actions d-grid gap-2 col-4 mx-auto">
-<%= link_to 'Back To Form', new_preference_path, class: "btn btn-outline-primary" %>
+<%= link_to 'Back To Form', new_preference_path, class: "btn btn-primary" %>
 </div>
 <br/>
 </div>

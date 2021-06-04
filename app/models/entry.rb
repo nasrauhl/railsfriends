@@ -4,7 +4,7 @@ class Entry < ApplicationRecord
 
 	def self.search(search)
 		if search
-			where (["location LIKE ?", "%#{search}%"])
+			where (["building LIKE ?", "%#{search}%"])
 		else
 			all
 		end
