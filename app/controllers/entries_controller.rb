@@ -92,4 +92,5 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:uni_name, :location, :room_type, :rent, :photo, :link, :building, :distance)
     end
+
 end

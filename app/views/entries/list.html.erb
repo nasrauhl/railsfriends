@@ -12,7 +12,7 @@
           <div class="card-header">
                 <div class="dropdown">
                   <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                    <i class="fas fa-list-ul"></i>
+                    <i class="fas fa-caret-down"></i>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right">
                     <%= link_to 'Visit', favorite.entry, class: "dropdown-item"%></a>                    
@@ -24,7 +24,7 @@
             <h5 class="card-category text-center"><%= favorite.entry.location %></h5>
               <hr class="my-4">
             <div class="container text-center">          
-            <td><i class="now-ui-icons arrows-1_refresh-69"></i><small class="text-right">  Added &ndash; <%= time_ago_in_words(favorite.created_at)%> ago </small></td>
+            <td><i class="fas fa-sync-alt"></i> <small class="text-right">  Added &ndash; <%= time_ago_in_words(favorite.created_at)%> ago </small></td>
           </div>
           </div>
         </div>

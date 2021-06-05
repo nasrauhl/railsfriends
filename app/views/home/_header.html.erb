@@ -7,11 +7,7 @@
     -->
       <div class="logo">
         <a href="/" class="simple-text logo-mini">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><title>ic_location_city_24px</title>
-          <g fill="#ffffff">
-          <path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"></path>
-          </g>
-          </svg>
+          <i class="fas fa-city"></i>
         </a>
         <a href="/" class="simple-text logo-normal">
           Residency RS
@@ -21,25 +17,25 @@
         <ul class="nav">
           <li class="active ">
             <a href="/">
-              <i class="now-ui-icons design_app"></i>
+              <i class="fas fa-dice-d6"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
             <a href="/preferences/new">
-              <i class="now-ui-icons education_atom"></i>
+              <i class="fas fa-fingerprint"></i>
               <p>User Preference </p>
             </a>
           </li>
           <li>
             <a href="/list">
-              <i class="now-ui-icons location_map-big"></i>
+              <i class="far fa-map"></i>
               <p>Residence List</p>
             </a>
           </li>          
           <li>
             <a href="/users/edit">
-              <i class="now-ui-icons users_single-02"></i>
+              <i class="fas fa-user-astronaut"></i>
               <p>Edit Profile</p>
             </a>
           </li>    
@@ -79,7 +75,7 @@
             <ul class="navbar-nav">              
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons users_single-02"></i>
+                  <i class="fa fa-street-view"></i>
                   <p>
                     <span class="d-lg-none d-md-block">User</span>
                   </p>
@@ -87,15 +83,17 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>     
                 </div>
-              </li>              
+              </li>   
+              <% if current_user && current_user.admin %>           
               <li class="nav-item">
                 <a class="nav-link" href="/entries">
-                  <i class="now-ui-icons objects_globe"></i>
+                  <i class="fa fa-globe"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Admin</span>
                   </p>
                 </a>
               </li>
+              <% end %>
             </ul>
           </div>
         </div>
