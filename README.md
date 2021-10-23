@@ -1,7 +1,7 @@
 # APPLICATION 
 
-Hello. My name is Mohamad Nasrullah. A beginner coder - true to its core definition. 
+Hello. My name is Nasrullah. A beginner coder - true to its core definition. 
 
-This is my first Git repositories. Many more to come, of course.
+This is my first Git repository. Many more to come, fingers crossed.
 
-Follow my SNS @nasrauhl
+Follow my SNS tq @nasrauhl
