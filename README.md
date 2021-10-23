@@ -1,4 +1,4 @@
-# APPLICATION 
+# WEB APPLICATION 
 
 Hello. My name is Nasrullah. A beginner coder - true to its core definition. 
 
